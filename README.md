@@ -1,7 +1,7 @@
 # LBG_Assignment
 
 #For ReadFile :
-run node ReadFile.js <filepath>
+run node ReadFile.js filepath
 
 Run the code with npm start and hit following urls:
 
