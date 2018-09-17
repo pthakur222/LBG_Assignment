@@ -6,7 +6,7 @@ const server = http.createServer(function(req,res){
 
     fs.readFile(fileName, (err, file) => {
         if(err){
-          res.send(err)
+          res.end(err)
          }
          else{
              res.statusCode = 200;

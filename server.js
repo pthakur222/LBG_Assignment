@@ -36,7 +36,7 @@ app.get('/writefile',function(req,res){
     var rawData = req.query.rawData;
     fs.writeFile('output.txt',rawData, (err) => {
         if(err){
-          res.send(err)
+          res.end(err)
          }
          else{
              res.statusCode = 200;
