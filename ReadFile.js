@@ -16,6 +16,8 @@ const server = http.createServer(function(req,res){
 
 })
 
-server.listen(3001,function(){
-    console.log("Server listening on port 3001");
+server.listen(3000,function(){
+    console.log("Server listening on port 3000");
 });
+
+module.exports = server;

@@ -10,16 +10,13 @@ app.get('/product',function(req,res){
     let firstValue = req.query.firstValue;
     let secondValue = req.query.secondValue;
     const product = firstValue * secondValue;
-    if(!product){
-        if(isNaN(firstValue) || isNaN(secondValue)){
-            res.send("Value is not a number. Please provide numerical value")
-        }
-        else{
+  
+    if(!product || isNaN(firstValue) || isNaN(secondValue)){
         res.sendStatus(404);
-        res.send("Not found");
-        }
+        res.end("Not found")
     }
     else{
+    res.writeHead(200, {"Content-Type": "text/plain"});    
     res.end("Product is:" + product);
     }
 })
@@ -27,7 +24,7 @@ app.get('/product',function(req,res){
 app.get('/string',function(req,res){
     var str = req.query.string;
      const result = func.readString(str);
-     res.end(result);
+     res.send(result);
  })
 
  
@@ -49,3 +46,5 @@ app.get('/writefile',function(req,res){
 server.listen(3001,function(){
     console.log("Server listening on port 3001");
 });
+
+module.exports = server;
