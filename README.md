@@ -15,3 +15,7 @@ http://localhost:3001/string?string=<add your text>
 http://localhost:3001/writefile?rawData=<add your text>
 
 resultant file is output.txt
+
+
+For running test cases :
+run mocha test.js
